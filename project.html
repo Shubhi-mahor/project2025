@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerCompass - Your Guide To A Bright Future</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Career<span>Compass</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">How It Works</a></li>
+                    <li><a href="#career-explorer">Career Explorer</a></li>
+                    <li><a href="#assessment">Self Assessment</a></li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Discover Your Path Beyond Streams</h1>
+            <p>Explore career options regardless of your academic stream. Break the stereotype and find what truly matches your passion and strengths.</p>
+            <a href="#assessment" class="cta-button">Take the Assessment</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">How We Help You</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://via.placeholder.com/400x200');"></div>
+                    <div class="feature-content">
+                        <h3>Personalized Guidance</h3>
+                        <p>Our AI-powered assessment tool analyzes your interests, skills, and personality to suggest careers that align with who you are, not just what you've studied.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://via.placeholder.com/400x200');"></div>
+                    <div class="feature-content">
+                        <h3>Break the Stream Stereotype</h3>
+                        <p>Discover careers that cross traditional boundaries. Science students can explore arts, commerce students can find tech roles, and arts students can excel in science-related fields.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://via.placeholder.com/400x200');"></div>
+                    <div class="feature-content">
+                        <h3>Career Roadmaps</h3>
+                        <p>Get detailed insights into what each career path requires, including education, skills, and alternative entry points especially for those coming from non-traditional backgrounds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Explorer Section -->
+    <section id="career-explorer" class="career-explorer">
+        <div class="container">
+            <h2 class="section-title">Explore Career Options</h2>
+            <div class="streams-container">
+                <button class="stream-button active" data-stream="all">All Careers</button>
+                <button class="stream-button" data-stream="science">From Science</button>
+                <button class="stream-button" data-stream="commerce">From Commerce</button>
+                <button class="stream-button" data-stream="arts">From Arts</button>
+                <button class="stream-button" data-stream="cross-stream">Cross-Stream</button>
+            </div>
+            <div class="careers-grid" id="careers-container">
+                <!-- Career cards will be dynamically generated with JavaScript -->
+                <div class="career-card" data-id="1" data-streams="science cross-stream">
+                    <div class="career-img" style="background-image: url('https://via.placeholder.com/300x200');"></div>
+                    <div class="career-content">
+                        <h3>UX Designer</h3>
+                        <p>Design interfaces and user experiences for digital products</p>
+                        <div class="career-tags">
+                            <span class="career-tag">Creative</span>
+                            <span class="career-tag">Tech</span>
+                            <span class="career-tag">Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="career-card" data-id="2" data-streams="arts cross-stream">
+                    <div class="career-img" style="background-image: url('https://via.placeholder.com/300x200');"></div>
+                    <div class="career-content">
+                        <h3>Data Scientist</h3>
+                        <p>Analyze data to derive insights and solve business problems</p>
+                        <div class="career-tags">
+                            <span class="career-tag">Analytical</span>
+                            <span class="career-tag">Tech</span>
+                            <span class="career-tag">Math</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- More career cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Section -->
+    <section id="assessment" class="assessment">
+        <div class="container">
+            <h2 class="section-title">Find Your Perfect Career Match</h2>
+            <div class="assessment-form">
+                <form id="career-assessment">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stream">Current/Completed Stream</label>
+                        <select id="stream" name="stream" required>
+                            <option value="">Select your stream</option>
+                            <option value="science">Science</option>
+                            <option value="commerce">Commerce</option>
+                            <option value="arts">Arts</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="interest-sliders">
+                        <h3>Rate Your Interest (1-10)</h3>
+                        <div class="slider-group">
+                            <label for="creative">Creative/Artistic Work</label>
+                            <div class="slider-container">
+                                <input type="range" id="creative" name="creative" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label for="analytical">Analytical/Problem Solving</label>
+                            <div class="slider-container">
+                                <input type="range" id="analytical" name="analytical" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label for="technical">Technical/Engineering</label>
+                            <div class="slider-container">
+                                <input type="range" id="technical" name="technical" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label for="social">Social/Interactive</label>
+                            <div class="slider-container">
+                                <input type="range" id="social" name="social" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label for="business">Business/Management</label>
+                            <div class="slider-container">
+                                <input type="range" id="business" name="business" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="cta-button">Get Career Recommendations</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p>"As a science student, I always thought I had to pursue engineering or medicine. PathFinder helped me discover my passion for digital marketing, and now I'm thriving in a career I love!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://via.placeholder.com/100" alt="Priya Sharma">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Science Graduate, Now Digital Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Coming from arts, I never thought tech was for me. PathFinder showed me that my creativity could be leveraged in UI/UX design. I've now worked with top tech startups without any formal tech education!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://via.placeholder.com/100" alt="Rahul Mehta">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Mehta</h4>
+                            <p>Arts Graduate, Now Senior UX Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"My commerce background made me think banking was my only option. Thanks to PathFinder, I discovered data analytics. With some additional courses, I'm now working as a Business Intelligence Analyst!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://via.placeholder.com/100" alt="Ananya Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ananya Patel</h4>
+                            <p>Commerce Graduate, Now BI Analyst</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-control prev">&#10094;</button>
+                    <button class="slider-control next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Have questions or need personalized guidance?</h3>
+                    <p>Our career counselors are here to help you make informed decisions about your future.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>info@pathfinder.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>+91 9876543210</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>123 Career Street, Education City, India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="inquiry-form">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="contact-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="contact-subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="contact-message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CareerCompass</h3>
+                    <p>Breaking stereotypes in career guidance for 12th graduates. Helping students discover their true potential beyond stream limitations.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">ig</a>
+                        <a href="#" class="social-link">tw</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">How It Works</a></li>
+                        <li><a href="#career-explorer">Career Explorer</a></li>
+                        <li><a href="#assessment">Self Assessment</a></li>
+                        <li><a href="#testimonials">Success Stories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Career Blog</a></li>
+                        <li><a href="#">Industry Reports</a></li>
+                        <li><a href="#">Course Finder</a></li>
+                        <li><a href="#">Skill Assessment</a></li>
+                        <li><a href="#">Personality Tests</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get the latest career insights and opportunities.</p>
+                        <form class="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 CareerCompass. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- Career Detail Modal -->
+        <div class="modal" id="career-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="career-details" id="career-details-container">
+                    <!-- Career details will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    
+        <!-- Scripts -->
+        <script src="project.js"></script>
+    </body>
+    </html>
