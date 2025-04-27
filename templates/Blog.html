@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Compass | Trends, Insights & Success Stories</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #039bf4;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Header */
+        header {
+            background: #039bf4;
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: #039bf4;
+            border-bottom: 3px solid #039bf4;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* Featured Section */
+        .featured {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .featured h2 {
+            color: #039bf4;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-image {
+            height: 300px;
+            background-color: #eee;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-image {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            color: #039bf4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-meta {
+            display: flex;
+            gap: 1rem;
+            color: #777;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            color: #555;
+            margin-right: 0.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #039bf4; 
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #039bf4;
+            text-decoration: none;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: #039bf4;
+            padding: 3rem;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .newsletter h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter p {
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .form-group {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .form-group button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .form-group button:hover {
+            background-color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group {
+                flex-direction: column;
+            }
+            
+            .form-group input,
+            .form-group button {
+                width: 100%;
+                border-radius: 5px;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Career Compass</h1>
+        <p>Navigating the future of work: Trends, insights, and success stories to inspire your career journey</p>
+    </header>
+    
+    <main>
+        <section class="featured">
+            <h2>Featured Article</h2>
+            <div class="featured-image">
+                <img src="/api/placeholder/800/400" alt="Students celebrating graduation">
+            </div>
+            <h3>From Classroom to Career: How Gen Z is Redefining the Workplace</h3>
+            <div class="card-meta">
+                <span>April 25, 2025</span>
+                <span>By Career Compass Team</span>
+            </div>
+            <p>The landscape of work is undergoing a profound transformation, largely driven by the newest generation to enter the workforce. Gen Z, born between 1997 and 2012, brings fresh perspectives, digital fluency, and a distinct set of values that are reshaping traditional workplace norms.</p>
+            <p>Our latest research reveals that 78% of Gen Z professionals prioritize purpose-driven work over higher salaries, and they're three times more likely to change jobs if they don't see clear growth opportunities. What does this mean for employers and the future of work?</p>
+            <a href="#" class="btn">Read More</a>
+        </section>
+        
+        <h2 class="section-title">Latest Career Trends</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="AI technology">
+                </div>
+                <div class="card-content">
+                    <h3>AI Integration: The New Essential Skill</h3>
+                    <div class="card-meta">
+                        <span>April 20, 2025</span>
+                        <span>By Dr. Emily Chen</span>
+                    </div>
+                    <p>As AI continues to transform industries, professionals who can effectively integrate AI tools into their workflow are seeing a 40% boost in productivity and career advancement opportunities.</p>
+                    <div>
+                        <span class="tag">AI</span>
+                        <span class="tag">Technology</span>
+                        <span class="tag">Skills</span>
+                    </div>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="Remote work setup">
+                </div>
+                <div class="card-content">
+                    <h3>The Rise of Digital Nomadism</h3>
+                    <div class="card-meta">
+                        <span>April 18, 2025</span>
+                        <span>By Mark Johnson</span>
+                    </div>
+                    <p>With 65% of companies now offering location-flexible work arrangements, a new generation of professionals is embracing digital nomadism, combining work with global exploration.</p>
+                    <div>
+                        <span class="tag">Remote Work</span>
+                        <span class="tag">Lifestyle</span>
+                        <span class="tag">Future of Work</span>
+                    </div>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="Sustainability initiatives">
+                </div>
+                <div class="card-content">
+                    <h3>Green Careers: Sustainability at the Forefront</h3>
+                    <div class="card-meta">
+                        <span>April 15, 2025</span>
+                        <span>By Sarah Green</span>
+                    </div>
+                    <p>The demand for sustainability professionals has surged by 80% in the last two years, with clean energy, sustainable architecture, and environmental consulting leading the growth.</p>
+                    <div>
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">Green Jobs</span>
+                        <span class="tag">Growth Sectors</span>
+                    </div>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Expert Insights</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="Expert interview">
+                </div>
+                <div class="card-content">
+                    <h3>The Skill Paradox: Why Specialists and Generalists Both Win</h3>
+                    <div class="card-meta">
+                        <span>April 10, 2025</span>
+                        <span>By Prof. David Wright</span>
+                    </div>
+                    <p>The traditional debate between specialization and versatility is being reshaped. Our analysis shows that T-shaped professionals—those with deep expertise in one area plus broad knowledge across related fields—are 52% more likely to advance into leadership positions.</p>
+                    <div>
+                        <span class="tag">Career Strategy</span>
+                        <span class="tag">Skills Development</span>
+                    </div>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="Portfolio career concept">
+                </div>
+                <div class="card-content">
+                    <h3>Portfolio Careers: The End of the Linear Path</h3>
+                    <div class="card-meta">
+                        <span>April 8, 2025</span>
+                        <span>By Maria Rodriguez</span>
+                    </div>
+                    <p>The concept of a single lifelong career is rapidly fading. Our survey of over 10,000 professionals reveals that 47% now describe themselves as having "portfolio careers" with multiple income streams and professional identities.</p>
+                    <div>
+                        <span class="tag">Career Paths</span>
+                        <span class="tag">Future of Work</span>
+                        <span class="tag">Flexibility</span>
+                    </div>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="HR analytics dashboard">
+                </div>
+                <div class="card-content">
+                    <h3>The Human Side of AI Recruitment</h3>
+                    <div class="card-meta">
+                        <span>April 5, 2025</span>
+                        <span>By HR Director Jennifer Lee</span>
+                    </div>
+                    <p>As AI-powered recruitment tools become standard, successful job seekers are those who understand how to optimize their applications for both algorithms and human reviewers. Learn the strategies that increased interview rates by 60%.</p>
+                    <div>
+                        <span class="tag">Job Search</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">Recruitment</span>
+                    </div>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Success Stories</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="Portrait of Maya Chen">
+                </div>
+                <div class="card-content">
+                    <h3>Maya Chen: From Computer Science Dropout to Tech Lead</h3>
+                    <div class="card-meta">
+                        <span>March 30, 2025</span>
+                        <span>As told to Alex Martin</span>
+                    </div>
+                    <p>"I left my CS program feeling defeated, but found my path through self-taught development and a mentor who believed in me. Three years later, I'm leading an engineering team at a Fortune 500 company, proving that non-traditional paths can lead to exceptional outcomes."</p>
+                    <div>
+                        <span class="tag">Tech</span>
+                        <span class="tag">Alternative Education</span>
+                        <span class="tag">Perseverance</span>
+                    </div>
+                    <a href="#" class="btn">Read Full Story</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="Portrait of James Wilson">
+                </div>
+                <div class="card-content">
+                    <h3>James Wilson: Pivoting from Finance to Healthcare at 35</h3>
+                    <div class="card-meta">
+                        <span>March 25, 2025</span>
+                        <span>As told to Sophia Adams</span>
+                    </div>
+                    <p>"After a decade in investment banking, I realized my passion was in healthcare innovation. The transition was challenging, but by leveraging my financial expertise in a new context, I found my true calling developing funding strategies for medical research initiatives."</p>
+                    <div>
+                        <span class="tag">Career Change</span>
+                        <span class="tag">Healthcare</span>
+                        <span class="tag">Mid-career Pivot</span>
+                    </div>
+                    <a href="#" class="btn">Read Full Story</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/200" alt="Portrait of Elena Santos">
+                </div>
+                <div class="card-content">
+                    <h3>Elena Santos: Building a Global Business from a College Project</h3>
+                    <div class="card-meta">
+                        <span>March 20, 2025</span>
+                        <span>As told to Ryan Kim</span>
+                    </div>
+                    <p>"What started as a sustainability assignment in my senior year evolved into a B-Corp with operations in 12 countries. The key was seeing problems as opportunities and being unafraid to seek mentorship from industry leaders who eventually became investors in my vision."</p>
+                    <div>
+                        <span class="tag">Entrepreneurship</span>
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">Student Success</span>
+                    </div>
+                    <a href="#" class="btn">Read Full Story</a>
+                </div>
+            </div>
+        </div>
+        
+        <section class="newsletter">
+            <h2>Stay Ahead of Career Trends</h2>
+            <p>Subscribe to our weekly newsletter for the latest insights, opportunities, and success stories delivered directly to your inbox.</p>
+            <div class="form-group">
+                <input type="email" placeholder="Your email address">
+                <button>Subscribe</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Career Compass: Helping students and professionals navigate their career journeys through data-driven insights, expert guidance, and inspiring success stories.</p>
+        <div class="copyright">
+            <p>&copy; 2025 Career Compass. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

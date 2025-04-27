@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="titled.css">
+        
+</head>
+<body>
+    <!-- Admin Header with Stylish Title -->
+    <header class="admin-header">
+        <h1 class="admin-title">Get Started to Discover Yourself</h1>
+    </header>
+
+    <div class="container">
+        <!-- Part 1: Resources Section (Replacing "How We Help You") -->
+        <section id="resources" class="resources">
+            <div class="container">
+                <h2 class="section-title">Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-img" style="background-image: url('blog.jpeg');"></div>
+                        <div class="resource-content">
+                            <h3 class="url"><a href="Blog.html">Blog</a></h3>
+                            <p>Discover the latest trends, insights, and success stories from students who found their perfect career match.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-img" style="background-image: url('enterance.webp');"></div>
+                        <div class="resource-content">
+                            <h3 class="url"><a href="exam.html">Entrance Exams</a></h3>
+                            <p>Information about key entrance exams, preparation strategies, and important dates for various educational paths.</p>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-img" style="background-image: url('coun.jpg');"></div>
+                        <div class="resource-content">
+                            <h3 class="url"><a href="services.html">Counseling Services</a></h3>
+                            <p>Connect with experienced career counselors who can provide personalized guidance for your career journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: Explore Career Options Section -->
+        <section id="career-explorer" class="career-explorer">
+            <div class="container">
+                <h2 class="section-title">Explore Career Options</h2>
+                <div class="streams-container">
+                    <button class="stream-button active" data-stream="all">All Careers</button>
+                    <button class="stream-button" data-stream="science">From Science</button>
+                    <button class="stream-button" data-stream="commerce">From Commerce</button>
+                    <button class="stream-button" data-stream="arts">From Arts</button>
+                    <button class="stream-button" data-stream="cross-stream">Cross-Stream</button>
+                </div>
+                <div class="careers-grid" id="careers-container">
+                    <!-- Career cards will be dynamically generated with JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Career Details Section -->
+        <section id="career-details" class="career-details hidden">
+            <div class="container">
+                <div class="career-detail-header">
+                    <div class="career-detail-title">
+                        <h3 id="detail-title">Career Title</h3>
+                        <p id="detail-description" class="career-detail-description">Career description will appear here</p>
+                    </div>
+                </div>
+                
+                <div class="career-detail-section">
+                    <h4>What You'll Do</h4>
+                    <p id="detail-full-description">Full description of the career will appear here</p>
+                </div>
+                
+                <div class="career-detail-section">
+                    <h4>Skills Required</h4>
+                    <div class="skill-tags" id="detail-skills">
+                        <!-- Skills will be added dynamically -->
+                    </div>
+                </div>
+                
+                <div class="career-detail-section">
+                    <h4>Education Pathways</h4>
+                    <div id="detail-education">
+                        <!-- Education paths will be added dynamically -->
+                    </div>
+                </div>
+                
+                <div class="career-detail-section">
+                    <h4>Salary & Growth</h4>
+                    <p><strong>Expected Salary:</strong> <span id="detail-salary"></span></p>
+                    <p><strong>Growth Outlook:</strong> <span id="detail-growth"></span></p>
+                </div>
+                
+                <div class="career-detail-section">
+                    <h4>Cross-Stream Advantage</h4>
+                    <div class="cross-stream-advantage">
+                        <p id="detail-cross-advantage"></p>
+                </div>
+
+                <div class="career-detail-section">
+                    <p><strong>Learn More:</strong> <a id="detail-link" href="#" target="_blank"></a></p>
+                </div>
+
+                </div>
+
+                <button id="back-to-careers" class="stream-button">Back to Career Explorer</button>
+                </div>
+        </section>
+    </div>
+     <!-- Assessment Section -->
+     <section id="assessment" class="assessment">
+        <div class="container">
+            <h2 class="section-title">Find Your Perfect Career Match</h2>
+            <div class="assessment-form">
+                <form id="career-assessment">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stream">Current/Completed Stream</label>
+                        <select id="stream" name="stream" required>
+                            <option value="">Select your stream</option>
+                            <option value="science">Science</option>
+                            <option value="commerce">Commerce</option>
+                            <option value="arts">Arts</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="interest-sliders">
+                        <h3>Rate Your Interest (1-10)</h3>
+                        <div class="slider-group">
+                            <label for="creative">Creative/Artistic Work</label>
+                            <div class="slider-container">
+                                <input type="range" id="creative" name="creative" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label for="analytical">Analytical/Problem Solving</label>
+                            <div class="slider-container">
+                                <input type="range" id="analytical" name="analytical" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label for="technical">Technical/Engineering</label>
+                            <div class="slider-container">
+                                <input type="range" id="technical" name="technical" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label for="social">Social/Interactive</label>
+                            <div class="slider-container">
+                                <input type="range" id="social" name="social" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label for="business">Business/Management</label>
+                            <div class="slider-container">
+                                <input type="range" id="business" name="business" min="1" max="10" value="5">
+                                <span class="slider-value">5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="cta-button" ><a href="recc.html">Get Career Recommendations</a></button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="titled.js"></script>
+</html>

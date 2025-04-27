@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamPrep Central | Your Guide to Educational Entrance Exams</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #039bf4;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Header */
+        header {
+            background: #039bf4;
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: #039bf4;
+            border-bottom: 3px solid #039bf4;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* Entrance Exams Section */
+        .exams-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .exam-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .exam-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .exam-header {
+            background-color: #039bf4;
+            color: white;
+            padding: 1rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .exam-content {
+            padding: 1.5rem;
+        }
+        
+        .exam-content h3 {
+            color: #039bf4;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .exam-badge {
+            display: inline-block;
+            background-color: #e6f0ff;
+            color: #039bf4;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .key-dates {
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .key-dates h4 {
+            color: #039bf4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .date-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .date-item:last-child {
+            border-bottom: none;
+        }
+        
+        .eligibility {
+            margin: 1rem 0;
+        }
+        
+        .eligibility h4 {
+            color: #039bf4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .eligibility ul {
+            padding-left: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #039bf4;
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background-color: #039bf4;
+            text-decoration: none;
+        }
+        
+        /* Preparation Strategies */
+        .strategies {
+            margin: 3rem 0;
+        }
+        
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .strategy-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+        
+        .strategy-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e6f0ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #039bf4;
+        }
+        
+        .strategy-card h3 {
+            color: #039bf4;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Study Resources */
+        .resources {
+            margin: 3rem 0;
+        }
+        
+        .resource-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .resource-table th {
+            background-color: #039bf4;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .resource-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .resource-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .resource-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            margin: 3rem 0;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-question {
+            padding: 1.2rem;
+            font-weight: 600;
+            color: #039bf4;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 1.2rem;
+            top: 1.2rem;
+            font-size: 1.2rem;
+        }
+        
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: #039bf4;
+            padding: 3rem;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .newsletter h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter p {
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .form-group {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .form-group button {
+            background-color: #ff7b00;
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .form-group button:hover {
+            background-color: #e66f00;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #039bf4;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .exams-container,
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group {
+                flex-direction: column;
+            }
+            
+            .form-group input,
+            .form-group button {
+                width: 100%;
+                border-radius: 5px;
+                margin-bottom: 0.5rem;
+            }
+            
+            .resource-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ExamPrep Central</h1>
+        <p>Your comprehensive guide to educational entrance exams, preparation strategies, and important dates</p>
+    </header>
+    
+    <main>
+        <h2 class="section-title">Popular Entrance Exams</h2>
+        <div class="exams-container">
+            <!-- Engineering Exams -->
+            <div class="exam-card">
+                <div class="exam-header">Engineering Entrance Exams</div>
+                <div class="exam-content">
+                    <span class="exam-badge">Undergraduate</span>
+                    <span class="exam-badge">Engineering</span>
+                    <span class="exam-badge">National</span>
+                    
+                    <h3>JEE (Joint Entrance Examination)</h3>
+                    <p>The primary pathway to prestigious engineering institutions like IITs, NITs, and other centrally funded technical institutions in India.</p>
+                    
+                    <div class="key-dates">
+                        <h4>Key Dates (2025-26 Academic Year)</h4>
+                        <div class="date-item">
+                            <span>JEE Main Session 1 Registration</span>
+                            <span>November 10 - December 15, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span>JEE Main Session 1 Exam</span>
+                            <span>January 8 - 25, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>JEE Main Session 2 Registration</span>
+                            <span>February 10 - March 15, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>JEE Advanced Registration</span>
+                            <span>April 20 - May 5, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>JEE Advanced Exam</span>
+                            <span>May 25, 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="eligibility">
+                        <h4>Eligibility Criteria</h4>
+                        <ul>
+                            <li>Candidates should have passed 10+2 or equivalent with Physics, Chemistry, and Mathematics</li>
+                            <li>For JEE Advanced: Must be among top 2,50,000 in JEE Main</li>
+                            <li>Maximum of two attempts in consecutive years</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Medical Exams -->
+            <div class="exam-card">
+                <div class="exam-header">Medical Entrance Exams</div>
+                <div class="exam-content">
+                    <span class="exam-badge">Undergraduate</span>
+                    <span class="exam-badge">Medical</span>
+                    <span class="exam-badge">National</span>
+                    
+                    <h3>NEET (National Eligibility cum Entrance Test)</h3>
+                    <p>The single entrance examination for admission to MBBS, BDS, and other undergraduate medical courses in India.</p>
+                    
+                    <div class="key-dates">
+                        <h4>Key Dates (2025-26 Academic Year)</h4>
+                        <div class="date-item">
+                            <span>NEET-UG Registration</span>
+                            <span>January 5 - February 10, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>NEET-UG Exam</span>
+                            <span>May 3, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>Result Declaration</span>
+                            <span>June 10, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>Counselling Begins</span>
+                            <span>July 5, 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="eligibility">
+                        <h4>Eligibility Criteria</h4>
+                        <ul>
+                            <li>Candidates should have passed 10+2 with Physics, Chemistry, Biology/Biotechnology</li>
+                            <li>Minimum 50% aggregate in PCB (40% for reserved categories)</li>
+                            <li>No age limit (as of 2025)</li>
+                            <li>Unlimited attempts</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Management Exams -->
+            <div class="exam-card">
+                <div class="exam-header">Management Entrance Exams</div>
+                <div class="exam-content">
+                    <span class="exam-badge">Graduate</span>
+                    <span class="exam-badge">Management</span>
+                    <span class="exam-badge">National</span>
+                    
+                    <h3>CAT (Common Admission Test)</h3>
+                    <p>The premier entrance examination for admission to top management institutions like IIMs and other business schools in India.</p>
+                    
+                    <div class="key-dates">
+                        <h4>Key Dates (2025-26 Academic Year)</h4>
+                        <div class="date-item">
+                            <span>CAT Registration</span>
+                            <span>August 5 - September 20, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span>CAT Exam</span>
+                            <span>November 30, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span>Result Declaration</span>
+                            <span>January 5, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>IIM Interviews</span>
+                            <span>February - April 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="eligibility">
+                        <h4>Eligibility Criteria</h4>
+                        <ul>
+                            <li>Bachelor's degree with minimum 50% marks (45% for reserved categories)</li>
+                            <li>Final year students can also apply</li>
+                            <li>No specific age limit</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Law Exams -->
+            <div class="exam-card">
+                <div class="exam-header">Law Entrance Exams</div>
+                <div class="exam-content">
+                    <span class="exam-badge">Undergraduate</span>
+                    <span class="exam-badge">Law</span>
+                    <span class="exam-badge">National</span>
+                    
+                    <h3>CLAT (Common Law Admission Test)</h3>
+                    <p>The unified entrance examination for admission to undergraduate and postgraduate law programs in 22 National Law Universities.</p>
+                    
+                    <div class="key-dates">
+                        <h4>Key Dates (2025-26 Academic Year)</h4>
+                        <div class="date-item">
+                            <span>CLAT Registration</span>
+                            <span>July 15 - October 30, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span>CLAT Exam</span>
+                            <span>December 15, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span>Result Declaration</span>
+                            <span>December 30, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span>Counselling Begins</span>
+                            <span>January 10, 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="eligibility">
+                        <h4>Eligibility Criteria</h4>
+                        <ul>
+                            <li>UG Programs: 10+2 with minimum 45% marks (40% for reserved categories)</li>
+                            <li>PG Programs: Bachelor's degree in Law with minimum 50% marks</li>
+                            <li>No specific age limit for PG programs</li>
+                            <li>Maximum age of 21 years for general category (UG programs)</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Government Services Exams -->
+            <div class="exam-card">
+                <div class="exam-header">Civil Services Exams</div>
+                <div class="exam-content">
+                    <span class="exam-badge">Graduate</span>
+                    <span class="exam-badge">Government</span>
+                    <span class="exam-badge">National</span>
+                    
+                    <h3>UPSC Civil Services Examination</h3>
+                    <p>The pathway to prestigious administrative services like IAS, IPS, IFS and other allied services in India.</p>
+                    
+                    <div class="key-dates">
+                        <h4>Key Dates (2026 Cycle)</h4>
+                        <div class="date-item">
+                            <span>Notification Release</span>
+                            <span>February 2, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>Last Date for Applications</span>
+                            <span>February 23, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>Prelims Examination</span>
+                            <span>June 7, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>Mains Examination</span>
+                            <span>September 18-27, 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="eligibility">
+                        <h4>Eligibility Criteria</h4>
+                        <ul>
+                            <li>Bachelor's degree in any discipline</li>
+                            <li>Age between 21-32 years (with relaxation for reserved categories)</li>
+                            <li>Maximum 6 attempts for general category</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Research Exams -->
+            <div class="exam-card">
+                <div class="exam-header">Research Entrance Exams</div>
+                <div class="exam-content">
+                    <span class="exam-badge">Postgraduate</span>
+                    <span class="exam-badge">Research</span>
+                    <span class="exam-badge">National</span>
+                    
+                    <h3>UGC NET (National Eligibility Test)</h3>
+                    <p>Determines eligibility for Assistant Professor positions and Junior Research Fellowships in Indian universities and colleges.</p>
+                    
+                    <div class="key-dates">
+                        <h4>Key Dates (2025-26 Academic Year)</h4>
+                        <div class="date-item">
+                            <span>December Cycle Registration</span>
+                            <span>September 25 - October 25, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span>December Cycle Exam</span>
+                            <span>December 10-22, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span>June Cycle Registration</span>
+                            <span>March 25 - April 25, 2026</span>
+                        </div>
+                        <div class="date-item">
+                            <span>June Cycle Exam</span>
+                            <span>June 15-25, 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="eligibility">
+                        <h4>Eligibility Criteria</h4>
+                        <ul>
+                            <li>Master's degree with at least 55% marks (50% for reserved categories)</li>
+                            <li>No age limit for Assistant Professor eligibility</li>
+                            <li>Maximum age of 30 years for JRF (relaxation for reserved categories)</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Effective Preparation Strategies</h2>
+        <div class="strategies">
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <div class="strategy-icon">1</div>
+                    <h3>Understand Exam Pattern</h3>
+                    <p>Before diving into preparation, thoroughly analyze the exam pattern, marking scheme, and syllabus. This helps in creating targeted preparation plans and understanding which areas need more focus.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">2</div>
+                    <h3>Create a Timeline</h3>
+                    <p>Develop a realistic study schedule that divides your preparation time across all subjects. Allocate more time to challenging topics and ensure regular revision of completed portions.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">3</div>
+                    <h3>Quality Study Material</h3>
+                    <p>Invest in standard reference books and quality study materials recommended by successful candidates and subject experts. Avoid getting overwhelmed with too many resources.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">4</div>
+                    <h3>Regular Mock Tests</h3>
+                    <p>Take full-length mock tests in exam-like conditions at least once a week. Analyze your performance to identify weak areas and refine your time management strategy.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">5</div>
+                    <h3>Concept Clarity</h3>
+                    <p>Focus on understanding fundamental concepts rather than memorizing. This approach helps in solving application-based questions which are increasingly common in competitive exams.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">6</div>
+                    <h3>Revision Strategy</h3>
+                    <p>Implement spaced repetition techniques for effective revision. Create concise notes and revisit them regularly to strengthen retention and recall during the exam.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">7</div>
+                    <h3>Subject-Specific Approach</h3>
+                    <p>Customize your preparation approach based on the nature of each subject. For instance, mathematics requires regular practice while subjects like biology may need more concept mapping and memorization techniques.</p>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">8</div>
+                    <h3>Physical & Mental Wellness</h3>
+                    <p>Maintain your physical and mental health with regular exercise, proper sleep, and mindfulness practices. A healthy body and mind are crucial for sustained preparation and optimal performance.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Recommended Study Resources</h2>
+        <div class="resources">
+            <table class="resource-table">
+                <thead>
+                    <tr>
+                        <th>Exam Category</th>
+                        <th>Recommended Books</th>
+                        <th>Online Platforms</th>
+                        <th>Other Resources</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Engineering (JEE)</td>
+                        <td>
+                            <ul>
+                                <li>HC Verma (Physics)</li>
+                                <li>RD Sharma (Mathematics)</li>
+                                <li>OP Tandon (Chemistry)</li>
+                                <li>Cengage Series</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Unacademy JEE</li>
+                                <li>Physics Wallah</li>
+                                <li>Vedantu</li>
+                                <li>NTA Practice Center</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Previous Year Papers</li>
+                                <li>NTA Mock Tests</li>
+                                <li>FIITJEE Archives</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Medical (NEET)</td>
+                        <td>
+                            <ul>
+                                <li>NCERT Biology (11th & 12th)</li>
+                                <li>Trueman's Biology</li>
+                                <li>Physical Chemistry by OP Tandon</li>
+                                <li>MTG Complete NEET Guide</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Allen Digital</li>
+                                <li>Aakash iTutor</li>
+                                <li>Prep Ladder</li>
+                                <li>Marrow</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Subject-wise Question Banks</li>
+                                <li>NEET Explorer App</li>
+                                <li>Medical Coaching Modules</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Management (CAT)</td>
+                        <td>
+                            <ul>
+                                <li>Arun Sharma Quantitative Aptitude</li>
+                                <li>Nishit Sinha Logical Reasoning</li>
+                                <li>Word Power Made Easy</li>
+                                <li>CAT Mock Papers by TIME/CL</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>IMS CAT Preparation</li>
+                                <li>TIME Virtual Classes</li>
+                                <li>Career Launcher Platform</li>
+                                <li>2IIM Online Course</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>CAT Previous Papers with Solutions</li>
+                                <li>Business News Analysis</li>
+                                <li>Group Discussion Materials</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Law (CLAT)</td>
+                        <td>
+                            <ul>
+                                <li>Universal's CLAT Guide</li>
+                                <li>Legal Awareness by AP Bhardwaj</li>
+                                <li>Legal Reasoning by RSM</li>
+                                <li>Pearson CLAT Explorer</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Law Prep Tutorial</li>
+                                <li>Career Launcher CLAT</li>
+                                <li>Legal Edge</li>
+                                <li>CLATalogue</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Current Affairs Compilations</li>
+                                <li>Legal News Digests</li>
+                                <li>CLAT Mock Series</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-question">How early should I start preparing for entrance exams?</div>
+                <div class="faq-answer">
+                    <p>The ideal preparation time varies by exam complexity and your current knowledge level. For comprehensive exams like JEE, NEET, or UPSC, 12-18 months of dedicated preparation is recommended. For management and law exams, 6-8 months is typically sufficient if you have a strong conceptual foundation. Starting early allows for deeper
